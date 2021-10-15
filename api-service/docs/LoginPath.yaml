@@ -1,0 +1,38 @@
+paths:
+   /login/:
+     post:
+       summary: endpoint to login users into Api
+       tags: [user]
+       requestBody:
+         required: true
+         content:
+           application/json:
+             schema:
+               $ref: '#/components/schemas/user'
+       responses:
+         "401":
+           description: returns status 401 when user is not found or password is incorret.
+           content:
+             application/json:
+               schema:
+                 type: object
+                 properties:
+                   message:
+                     type: string
+                     example: "user not found or password is incorret"
+                     description: user not found or password is incorret.
+         "200":
+           description: returns status 200 when user is found and password is correct.
+           content:
+             application/json:
+               schema:
+                 type: object
+                 properties:
+                   message:
+                     type: string
+                     example: "user authenticated"
+                     description: user found and password is correct
+                   token:
+                     type: string
+                     example: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYxM2RkNmZkYTcwOWE3ZDQzMGFjNThiYyIsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicGFzc3dvcmQiOiIxMGY3ZmZlYy0wOTAwLTQ2NjQtYmJmZS0yZTg3YjUwNzQyNDciLCJpc0FkbWluIjp0cnVlfSwiaWF0IjoxNjMxNDY0MTIxLCJleHAiOjE2MzE0NjQ2MjF9.ME4p8mG81KD9Hb9-OTVFEYhS5Y3VZHxxJSSHc1xwPTQ"
+                     description: token generated for user.

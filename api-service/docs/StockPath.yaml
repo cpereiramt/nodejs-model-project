@@ -1,0 +1,28 @@
+paths:
+   /stock/:
+     get:
+       summary: search for stock information based on stock symbol.
+       tags: [stock]
+       parameters:
+         - in: query
+           name: stock_code
+           description: stock symbol.
+           required: true
+       responses:
+         "200":
+           description: returns status 200 when stock is found.
+           content:
+             application/json:
+               schema:
+                   $ref: '#/components/schemas/Stock'
+         "404":
+           description: returns status 404 when stock is not found.
+           content:
+             application/json:
+               schema:
+                 type: object
+                 properties:
+                   message:
+                    example: "stock not found"
+                    type: string
+                    description: stock code not found.

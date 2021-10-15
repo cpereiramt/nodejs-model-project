@@ -1,0 +1,25 @@
+paths:
+   /logout/:
+     post:
+       summary: Logs user out of the application.
+       tags: [user]
+       responses:
+         "100":
+           description: Logs the user out of the API.
+           content:
+             application/json:
+               schema:
+                 type: object
+                 properties:
+                   message:
+                     type: string
+                     example: "Logged out !"
+                     description: User logged out.
+                   auth:
+                     type: boolean
+                     example: false
+                     description: User is not authenticated.
+                   token:
+                     type: string
+                     example: null
+                     description: User token as null.

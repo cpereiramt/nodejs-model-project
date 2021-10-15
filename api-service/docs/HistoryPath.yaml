@@ -1,0 +1,23 @@
+paths:
+   /history/:
+     get:
+       summary: retrieve stock request history filtered by user logged in.
+       tags: [stock]
+       responses:
+         "200":
+           description: returns status 200 when list of stock request is found for that particularly user.
+           content:
+             application/json:
+               schema:
+                 $ref: '#/components/schemas/History'
+         "404":
+           description: returns status 404 when list of stock request is not found for that particular user.
+           content:
+             application/json:
+               schema:
+                 type: object
+                 properties:
+                   message:
+                     type: string
+                     example: "history not found"
+                     description: history not found.

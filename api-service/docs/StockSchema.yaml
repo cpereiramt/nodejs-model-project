@@ -1,0 +1,20 @@
+ components:
+   schemas:
+    Stock:
+       type: object 
+       properties:
+         name:
+           type: string
+           description: The name of a stock.
+         symbol:
+           type: string
+           description: The symbol that's represent a stock.
+         open:
+           type: integer
+           description: the open price of a stock.
+         high:
+           type: integer
+           description: the high price of a stock.
+         low:
+           type: integer
+           description: the low price of a stock.

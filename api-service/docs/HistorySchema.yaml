@@ -1,0 +1,35 @@
+components:
+  schemas:
+    History:
+      type: object 
+      properties:
+        stock_code:
+          type: string
+          description: The symbol that's represent a stock.
+        request_date:
+          type: string
+          description: Time at the request was made.
+        stock_date:
+          type: string
+          description: last information update.
+        stock_time:
+          type: string
+          description: last information update (in hours).
+        stock_open:
+          type: integer
+          description: the open price of a stock.
+        stock_high:
+          type: integer
+          description: the high price of a stock.
+        stock_low:
+          type: integer
+          description: the low price of a stock.
+        stock_close:
+          type: integer
+          description: the close price of a stock.
+        stock_volume:
+          type: integer
+          description: the volume of transactions of a stock.
+        stock_name:
+          type: string
+          description: The name of a stock.

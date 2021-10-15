@@ -1,0 +1,11 @@
+ components:
+  schemas:
+    Stats:
+      type: object
+      properties:
+        stock:
+          type: string
+          description: The symbol that's represent a stock.
+        times_requested:
+          type: integer
+          description: The number of times the stock was requested.

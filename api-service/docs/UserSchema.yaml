@@ -1,0 +1,13 @@
+
+components:
+  schemas:
+    User:
+      type: object 
+      properties:
+        email:
+          type: string
+          description: The auto-generated id of the book.
+        isAdmin:
+          type: boolean
+          description: The title of your book.
+

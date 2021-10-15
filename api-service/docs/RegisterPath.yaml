@@ -1,0 +1,48 @@
+paths:
+   /register/:
+     post:
+       summary: register users into Api
+       tags: [user]
+       requestBody:
+         required: true
+         content:
+           application/json:
+             schema:
+               $ref: '#/components/schemas/user'
+       parameters:
+         - in: body
+           name: user
+           description: user object
+           required: true
+           schema:
+             properties:
+               email:
+                 type: string
+                 description: The email of the user.
+               isAdmin:
+                 type: boolean
+                 description: is user admin in API ?.
+
+       responses:
+         "304":
+           description: returns status 304 when user already exists.
+           content:
+             application/json:
+               schema:
+                 type: object
+                 properties:
+                   message:
+                     type: string
+                     example: "email already registered"
+                     description: email already registered.
+         "201":
+           description: returns status 200 when user is created.
+           content:
+             application/json:
+               schema:
+                 type: object
+                 properties:
+                   message:
+                     type: string
+                     example: "user created, please take note of your auto-generate password =>"
+                     description: user created, please take note of your auto-generate password =>.

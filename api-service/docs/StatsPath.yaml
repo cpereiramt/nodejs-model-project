@@ -1,0 +1,23 @@
+paths:
+   /stats/:
+     get:
+       summary: retrieve information about the five most stock queried.
+       tags: [stock]
+       responses:
+         "200":
+           description: returns status 200 when list of stock request is found.
+           content:
+             application/json:
+               schema:
+                 $ref: '#/components/schemas/Stats'
+         "401":
+           description: returns status 401 when logged user is not admim.
+           content:
+             application/json:
+               schema:
+                 type: object
+                 properties:
+                   message:
+                     type: string
+                     example: "you are not authorized to access this resource"
+                     description: Only admin user can access this information.

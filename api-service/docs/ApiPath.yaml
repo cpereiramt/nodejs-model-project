@@ -1,0 +1,17 @@
+paths:
+   /:
+     get:
+       summary: Api index endpoint
+       tags: [api]
+       responses:
+         "200":
+           description: Api index endpoint.
+           content:
+             application/json:
+               schema:
+                 type: object
+                 properties:
+                   message:
+                     type: string
+                     example: "Welcome to stock Api, please Sign In or Sign UP =>"
+                     description: Welcome to stock Api, please Sign In or Sign UP.
